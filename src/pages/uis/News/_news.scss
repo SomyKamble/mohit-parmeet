@@ -1,0 +1,23 @@
+.news {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0;
+
+    .search-bar {
+      width: 30rem;
+      background-color: transparent;
+      border: 2px solid var(--color-grey);
+    }
+  }
+
+  @import "./uis/Table/table";
+}
+
+@include respond(phone) {
+  .news {
+    margin-bottom: 5rem;
+  }
+}

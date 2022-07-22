@@ -1,0 +1,22 @@
+.twitter {
+  width: 100%;
+  //   min-height: 30rem;
+  height: fit-content;
+  background-color: var(--color-box);
+  border-radius: 10px;
+
+  .header {
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .search-bar {
+      width: 20rem;
+      background-color: transparent;
+      border: 2px solid var(--color-grey);
+    }
+  }
+  @import "./uis/Table/table";
+}

@@ -1,0 +1,64 @@
+.line-chart {
+  height: 30rem;
+  margin-bottom: 21rem;
+
+  .header {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.75rem;
+      span {
+        font-size: 1.5rem;
+        margin-right: 0.25rem;
+      }
+    }
+    p {
+      color: var(--color-grey-light);
+    }
+  }
+  .chart {
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+    border-top: 1px solid var(--color-grey);
+    padding-top: 2rem;
+    .tab {
+      margin-right: 5rem;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+      user-select: none;
+
+      &:hover {
+        color: var(--color-success);
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--color-success);
+        transition: $transition-primary;
+      }
+    }
+
+    .tab-active {
+      color: var(--color-success);
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}

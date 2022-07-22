@@ -1,0 +1,51 @@
+.mvac {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+
+  .card {
+    flex: 1;
+    height: 25rem;
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: var(--color-box);
+    border: 1px solid var(--color-grey);
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        span {
+          margin-left: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .card-left {
+    margin-right: 1rem;
+  }
+  .card-right {
+    margin-left: 1rem;
+  }
+}
+
+@include respond(phone) {
+  .mvac {
+    flex-direction: column;
+    .card {
+      width: 100%;
+    }
+
+    .card-left,
+    .card-right {
+      margin: 0;
+    }
+    .card-left {
+      margin-bottom: 2rem;
+    }
+  }
+}

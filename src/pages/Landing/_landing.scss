@@ -1,0 +1,92 @@
+.landing {
+  height: 100vh;
+  @import "./Navbar/navbar";
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .left-landing {
+    flex: 1;
+    padding: 0 7.5rem 0 7.5rem;
+
+    h1 {
+      font-size: 5rem;
+      line-height: 9rem;
+      margin-bottom: 1rem;
+      transform: translateX(-10rem);
+      opacity: 0;
+      animation: slideInLeft 1s forwards;
+      animation-delay: 6s;
+
+      span {
+        color: var(--color-primary);
+      }
+    }
+    .desc {
+      color: var(--color-grey-light);
+      width: 100%;
+      margin-bottom: 3rem;
+      font-size: 1.5rem;
+      transform: translateX(10rem);
+      opacity: 0;
+      animation: slideInRight 1s forwards;
+      animation-delay: 6s;
+    }
+
+    .button-primary {
+      border: 3px solid var(--color-primary);
+      max-width: 25rem;
+      background-color: transparent;
+      transform: translateY(10rem);
+      opacity: 0;
+      animation: slideInBottom 1s forwards;
+      animation-delay: 6s;
+      p {
+        color: var(--color-primary);
+      }
+
+      &:hover {
+        opacity: 1;
+        background-color: var(--color-primary);
+        p {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+
+  .right-landing {
+    flex: 1;
+    @include flexCenter;
+    video {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInGlobe 1s forwards;
+      animation-delay: 8s;
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .landing {
+    flex-direction: column;
+
+    .left-landing {
+      padding: 10rem 5rem;
+      @include flexCenter;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+        margin-bottom: 1rem;
+      }
+      .desc {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

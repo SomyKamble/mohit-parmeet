@@ -1,0 +1,134 @@
+.signup {
+  height: auto;
+  .logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 7.5rem;
+    padding: 0 7.5rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 8.5rem;
+      height: 8.5rem;
+      padding-bottom: 1rem;
+      object-fit: contain;
+    }
+  }
+
+  .container {
+    @include absCenter;
+    width: 100rem;
+    // max-width: fit-content;
+    height: auto;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    padding: 2rem 5rem;
+    
+    .content-input{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .left{
+        width: 40%;
+      }
+      .right{
+        width: 40%;
+      }
+    }
+
+    h1 {
+      color: var(--color-primary);
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    h2 {
+      margin-bottom: 2rem;
+    }
+    .subtitle {
+      margin-bottom: 2rem;
+      color: var(--color-grey-light);
+    }
+
+    .input {
+      width: 100%;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-grey);
+      padding: 0 1.25rem;
+      border-radius: 5px;
+      transition: $transition-primary;
+
+      //   &:hover {
+      //     background-color: var(--color-grey-light);
+      //   }
+
+      input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: inherit;
+        font-family: inherit;
+      }
+
+      i {
+        cursor: pointer;
+        color: var(--color-grey-light);
+
+        &:hover {
+          color: var(--color-light);
+        }
+      }
+    }
+
+    a {
+      color: var(--color-primary);
+    }
+
+    .button-primary {
+      margin-top: 3rem;
+      background-color: var(--color-primary);
+      margin-bottom: 3rem;
+    }
+
+    .new-acc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        margin-right: 1rem;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include respond(phone) {
+  .signup {
+    .logo {
+      padding: 0 2rem;
+    }
+    .container {
+      // @include absCenter;
+      max-width: fit-content;
+      height: auto;
+      .content-input{
+        flex-direction: column;
+        .left{
+          width: 100%;
+        }
+        .right{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

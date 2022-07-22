@@ -1,0 +1,29 @@
+.table-twitter {
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+
+    .col {
+      flex: 1;
+      font-weight: bold;
+      color: var(--color-grey-light);
+    }
+  }
+
+  .rows {
+    .row {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+
+      &:hover {
+        background-color: rgba($color-grey, 0.5);
+      }
+
+      .col {
+        flex: 1;
+      }
+    }
+  }
+}

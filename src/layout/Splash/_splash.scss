@@ -1,0 +1,81 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-background);
+  z-index: 1001;
+  animation: fadeOut 6s forwards;
+  overflow: hidden;
+  .square {
+    @include absCenter;
+    width: 20rem;
+    height: 20rem;
+    border: 5px solid var(--color-primary);
+    opacity: 0;
+    animation: animatesSquare 5s forwards;
+  }
+  .img {
+    @include absCenter;
+    padding-bottom: 5rem;
+    width: 20rem;
+    height: 20rem;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@include respond(phone) {
+  .splash {
+    .square {
+      width: 15rem;
+      height: 15rem;
+    }
+    .img {
+      width: 15rem;
+      height: 15rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+@keyframes animatesSquare {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  30% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

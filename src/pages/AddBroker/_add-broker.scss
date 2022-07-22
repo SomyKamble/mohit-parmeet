@@ -1,0 +1,158 @@
+.add-broker {
+  height: 100vh;
+  .logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 7.5rem;
+    padding: 0 7.5rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 8.5rem;
+      height: 8.5rem;
+      padding-bottom: 1rem;
+      object-fit: contain;
+    }
+  }
+
+  .container {
+    @include absCenter;
+    width: 75rem;
+    height: 50rem;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    overflow: hidden;
+
+    .header {
+      height: 3rem;
+      background-color: var(--color-primary);
+      @include flexCenter;
+
+      p {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+
+    .card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5rem;
+
+      .img {
+        width: 6rem;
+        height: 6rem;
+        flex-shrink: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .name {
+        font-size: 1.5rem;
+        width: 10rem;
+      }
+
+      .reg {
+        width: 5rem;
+        font-size: 1.2rem;
+        color: var(--color-grey-light);
+      }
+
+      .button-primary {
+        width: fit-content;
+        padding: 0 2rem;
+        border-radius: 20px;
+        background-color: var(--color-primary);
+      }
+
+      .btn-active {
+        background-color: transparent;
+        color: var(--color-primary) !important;
+      }
+
+      i {
+        font-size: 3rem;
+      }
+
+      .check-green {
+        color: var(--color-success);
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+
+      .btn {
+        width: fit-content;
+        padding: 1rem 2rem;
+        background-color: var(--color-grey);
+        border-radius: 5px;
+        font-size: 1.2rem;
+        user-select: none;
+        cursor: pointer;
+        transition: $transition-primary;
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+        p {
+          transition: $transition-primary;
+        }
+
+        &:hover {
+          background-color: var(--color-grey);
+        }
+      }
+    }
+  }
+}
+
+@include respond(phone) {
+  .add-broker {
+    .logo {
+      padding: 0 2rem;
+    }
+    .container {
+      @include absCenter;
+      width: 90%;
+      height: fit-content;
+
+      .card {
+        .img {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        .name {
+          font-size: 1.2rem;
+          width: 5rem;
+        }
+
+        .reg {
+          font-size: 0.9rem;
+          width: 3rem;
+        }
+
+        .button-primary {
+          height: 3rem;
+          p {
+            font-size: 1.2rem;
+          }
+        }
+        i {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
