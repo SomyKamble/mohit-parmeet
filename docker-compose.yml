@@ -1,0 +1,19 @@
+version: "3.8"
+
+services: 
+    app:
+        build: 
+            context: .
+        environment:
+                - NODE_ENV=production
+        volumes: 
+            - .:/app
+        ports: 
+            - 4000:3000
+        expose:
+            - 4000
+        image: app:enzu
+        container_name: enzu
+        command: npm start
+        stdin_open: true
+        restart: always
